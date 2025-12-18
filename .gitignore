@@ -1,37 +1,49 @@
+# =========================
 # Miscellaneous
+# =========================
 *.class
 *.log
 *.pyc
 *.swp
 .DS_Store
+Thumbs.db
+
 .atom/
 .build/
 .buildlog/
-.history
+.history/
 .svn/
 .swiftpm/
 migrate_working_dir/
 
-# IntelliJ related
+# =========================
+# IntelliJ / Android Studio
+# =========================
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# VS Code (uncomment if you don't want to track it)
 #.vscode/
+.vscode/.history/
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# =========================
+# Flutter / Dart / Pub
+# =========================
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
-.pub-cache/
+.metadata
+.packages
 .pub/
-/build/
-/coverage/
+.pub-cache/
+coverage/
+**/doc/api/
+
+# Build outputs (root + nested packages/apps)
+build/
+**/build/
 
 # Symbolication related
 app.*.symbols
@@ -39,7 +51,67 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# =========================
+# Android
+# =========================
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+**/android/**/GeneratedPluginRegistrant.java
+
+# Android build artifacts (usually not needed in git)
+*.apk
+*.aab
+
+# Android Studio will place build artifacts here (redundant with build/, but ok)
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+# Keystores / certs (IMPORTANT: don't commit)
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.pem
+**/*.der
+
+# =========================
+# iOS / macOS
+# =========================
+**/ios/Flutter/.last_build_id
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/ephemeral/
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+**/macos/Pods/
+**/macos/Flutter/ephemeral/
+**/macos/Runner/GeneratedPluginRegistrant.*
+
+# Xcode user files
+**/*.xcuserstate
+**/*.xcworkspace/xcuserdata/
+**/*.xcodeproj/xcuserdata/
+DerivedData/
+
+# =========================
+# Web
+# =========================
+**/web/.dart_tool/
+**/web/build/
+
+# =========================
+# Env / secrets (keep example file)
+# =========================
+.env
+.env.*
+!.env.example
+
+# Firebase configs (uncomment if you don't want to commit them)
+# **/google-services.json
+# **/GoogleService-Info.plist
+
+# =========================
+# Keep empty package folders
+# =========================
+!.gitkeep
