@@ -1,7 +1,23 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'core/localization/wl_merged_assets_loader.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+
+  runApp(EasyLocalization(
+    supportedLocales: const [Locale('ru'), Locale('en')],
+    fallbackLocale: const Locale('ru'),
+    startLocale: const Locale('ru'),
+    path: 'lib/core/localization/translations',
+    assetLoader:  WhiteLabelAssetLoader(
+      // appPath: 'lib/core/localization/translations', // overrides in each app
+    ),
+    child: const MyApp(),
+  ));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -12,11 +28,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
       theme: ThemeData(
-
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home:  MyHomePage(title: 'dio_helper.net.no_internet'.tr()),
     );
   }
 }
