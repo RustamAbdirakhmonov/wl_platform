@@ -4,14 +4,8 @@ import 'package:dio/dio.dart';
 
 class WhiteLabelInterceptor extends Interceptor {
 
-
-  WhiteLabelInterceptor();
-
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    // Add the API key to the headers
-    options.headers['Authorization'] = 'Bearer ${"token"}';
-
 
     // Log the request for debugging (optional)
     log('[DIO] Request to: ${options.uri}');
@@ -31,7 +25,7 @@ class WhiteLabelInterceptor extends Interceptor {
   }
 
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     // Handle error responses, e.g., unauthenticated or network issues
     log('[DIO] Error: ${err.message}');
     log('[DIO] Error Data: ${err.response?.data}');

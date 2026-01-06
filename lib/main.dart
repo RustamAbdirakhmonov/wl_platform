@@ -1,12 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:wl_platform/core/di/di.dart';
 
 import 'core/localization/wl_merged_assets_loader.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
+  await GetStorage.init();
+  setupDI();
   runApp(EasyLocalization(
     supportedLocales: const [Locale('ru'), Locale('en')],
     fallbackLocale: const Locale('ru'),

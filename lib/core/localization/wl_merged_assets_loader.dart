@@ -1,7 +1,7 @@
-import 'dart:convert';
-import 'package:flutter/services.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'dart:convert' show json;
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:easy_localization/easy_localization.dart' show AssetLoader;
+import 'package:flutter/material.dart' show Locale, debugPrint;
 
 class WhiteLabelAssetLoader extends AssetLoader {
   final String? appKey; // Nullable appKey
@@ -18,7 +18,7 @@ class WhiteLabelAssetLoader extends AssetLoader {
 
     // If appKey is null, return only common translations
     if (appKey == null) {
-      print("No appKey provided. Using only core translations.");
+      debugPrint("No appKey provided. Using only core translations.");
       return commonMap;
     }
 
@@ -37,7 +37,7 @@ class WhiteLabelAssetLoader extends AssetLoader {
     try {
       return await rootBundle.loadString(path);
     } catch (e) {
-      print('Error loading file at $path: $e');
+      debugPrint('Error loading file at $path: $e');
       return "{}"; // Return empty JSON object for missing files
     }
   }

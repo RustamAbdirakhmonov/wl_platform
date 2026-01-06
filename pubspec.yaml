@@ -19,6 +19,12 @@ dependencies:
   shared_preferences: ^2.5.4
   isar_community: ^3.3.0
   isar_community_flutter_libs: ^3.3.0
+  mobile_device_identifier: ^0.0.3
+  device_info_plus: ^12.3.0
+  uuid: ^4.5.2
+  appmetrica_plugin: ^3.4.0
+  get_storage: ^2.1.1
+  get_it: ^9.2.0
 
 
 dev_dependencies:
