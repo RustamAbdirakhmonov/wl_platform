@@ -15,6 +15,8 @@ class Assets {
   static const String coreEn = 'lib/core/localization/translations/core/en.json';
   static const String coreRu = 'lib/core/localization/translations/core/ru.json';
   static const String cryptoExample = 'lib/core/security/crypto/example.dart';
+  static const String dataAuthRpcMethods = 'lib/features/auth/data/auth_rpc_methods.dart';
+  static const String dataAuthService = 'lib/features/auth/data/auth_service.dart';
   static const String diDi = 'lib/core/di/di.dart';
   static const String dsComponentsExample = 'lib/core/design_systems/ds_components/example.dart';
   static const String dsIconsExample = 'lib/core/design_systems/ds_icons/example.dart';
@@ -22,7 +24,9 @@ class Assets {
   static const String dsThemeExample = 'lib/core/design_systems/ds_theme/example.dart';
   static const String dsTokensExample = 'lib/core/design_systems/ds_tokens/example.dart';
   static const String effectsExample = 'lib/core/state/effects/example.dart';
-  static const String envExample = 'lib/core/config/env/example.dart';
+  static const String envEnv = 'lib/core/config/env/env.dart';
+  static const String envEnvDev = 'lib/core/config/env/env_dev.dart';
+  static const String envEnvProd = 'lib/core/config/env/env_prod.dart';
   static const String errorsExample = 'lib/core/common/errors/example.dart';
   static const String errorsRpcError = 'lib/core/network/errors/rpc_error.dart';
   static const String featuresAuthExample = 'lib/features/auth/example.dart';
