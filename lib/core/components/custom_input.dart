@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wl_platform/core/branding/theme/const/app_color_extansion.dart';
 
 class CustomInputField extends StatefulWidget {
   final String label;
@@ -80,7 +81,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
         : null;
 
     final focusedBorderColor =
-        widget.focusedBorderColor ?? const Color(0xFF2196F3);
+        widget.focusedBorderColor ??context.brandGreen;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
